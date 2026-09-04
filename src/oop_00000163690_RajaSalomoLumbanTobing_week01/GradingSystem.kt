@@ -7,3 +7,10 @@ fun main() {
     println("Nama: " +name + ", Nilai: " + score)
 
 }
+
+fun main() {
+    val name = "Raja Salomo"
+    val score = 80
+
+    println("nama: $name, Nilai: $score")
+}
