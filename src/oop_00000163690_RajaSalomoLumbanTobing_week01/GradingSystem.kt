@@ -22,4 +22,5 @@ val grade = when (score){
     else -> "D"
 }
 
-println("Grade kamu: $grade")
+  println("Grade Kamu: $grade")
+
