@@ -1,11 +1,11 @@
-package oop_001_Johntor.week02
+package oop_00000163690_RajaSalomoLumbanTobing_week02
 
-class Student( new*
+class Student (
     val name: String,
-    val mim: String,
+    val name: String,
     var major: String
 ){
-        //Body class kosong dulu
+    //Body class kosong dulu
 }
 class Student ( val name: String, val nim: String, val major: String){
     init { // new*
