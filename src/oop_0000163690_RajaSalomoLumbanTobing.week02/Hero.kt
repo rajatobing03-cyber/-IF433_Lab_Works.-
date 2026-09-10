@@ -9,7 +9,7 @@ class Hero(
 ) {
 
     fun attack(targetName: String) {
-        println("$name menebas $targetName!")
+        println("$name menyerang $targetName dengan damage $baseDamage!")
     }
 
     fun takeDamage(damage: Int) {
@@ -34,44 +34,53 @@ fun main() {
 
     println("--- MINI RPG BATTLE ---")
 
-    print("Masukkan nama Hero 1: ")
-    val hero1Name = scanner.nextLine()
-    print("Masukkan base damage Hero 1: ")
-    val hero1Damage = scanner.nextInt()
+    print("Masukkan nama Hero: ")
+    val heroName = scanner.nextLine()
+    print("Masukkan base damage Hero: ")
+    val heroDamage = scanner.nextInt()
     scanner.nextLine()
 
-    print("Masukkan nama Hero 2: ")
-    val hero2Name = scanner.nextLine()
-    print("Masukkan base damage Hero 2: ")
-    val hero2Damage = scanner.nextInt()
-    scanner.nextLine()
-
-    val hero1 = Hero(hero1Name, hero1Damage)
-    val hero2 = Hero(hero2Name, hero2Damage)
+    val hero = Hero(heroName, heroDamage)
+    var enemyHp = 100 // musuh cukup variabel
 
     println("Pertarungan dimulai!")
-    hero1.printStatus()
-    hero2.printStatus()
+    hero.printStatus()
+    println("Enemy HP: $enemyHp")
 
-    // Loop battle sederhana
-    while (hero1.isAlive() && hero2.isAlive()) {
-        println("\nGiliran ${hero1.name}")
-        hero1.attack(hero2.name)
-        hero2.takeDamage(hero1.baseDamage)
+    while (hero.isAlive() && enemyHp > 0) {
+        println("\nMenu: 1. Serang, 2. Kabur")
+        print("Pilih aksi: ")
+        val choice = scanner.nextInt()
+        scanner.nextLine()
 
-        if (!hero2.isAlive()) break
+        if (choice == 1) {
+            // Hero menyerang
+            hero.attack("Enemy")
+            enemyHp -= hero.baseDamage
+            if (enemyHp < 0) enemyHp = 0
+            println("Enemy menerima serangan. HP sekarang: $enemyHp")
 
-        println("\nGiliran ${hero2.name}")
-        hero2.attack(hero1.name)
-        hero1.takeDamage(hero2.baseDamage)
+            // Enemy balas kalau masih hidup
+            if (enemyHp > 0) {
+                val enemyDamage = (10..20).random()
+                println("Enemy menyerang balik!")
+                hero.takeDamage(enemyDamage)
+            }
+        } else if (choice == 2) {
+            println("${hero.name} kabur dari pertarungan!")
+            break
+        } else {
+            println("Pilihan tidak valid!")
+        }
     }
 
     println("\n--- HASIL PERTARUNGAN ---")
-    if (hero1.isAlive()) {
-        println("${hero1.name} MENANG!")
-    } else if (hero2.isAlive()) {
-        println("${hero2.name} MENANG!")
-    } else {
+    if (hero.isAlive() && enemyHp <= 0) {
+        println("${hero.name} MENANG!")
+    } else if (!hero.isAlive() && enemyHp > 0) {
+        println("Enemy MENANG!")
+    } else if (!hero.isAlive() && enemyHp <= 0) {
         println("Keduanya tumbang, seri!")
+    } else {
+        println("Pertarungan berakhir tanpa pemenang.")
     }
-}
