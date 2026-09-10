@@ -39,8 +39,14 @@ fun main() {
     print("Masukkan Durasi Pinjam (hari, default 1): ")
     val durationInput = scanner.nextLine()
 
-    // Kalau user kosongkan input, pakai default 1
-    val loanDuration = if (durationInput.isBlank()) 1 else durationInput.toInt()
+    // Kalau user kosongkan input → default 1
+    var loanDuration = if (durationInput.isBlank()) 1 else durationInput.toInt()
+
+    // Validasi: durasi tidak boleh minus
+    if (loanDuration < 0) {
+        println("WARNING: Lama pinjam tidak boleh minus. Diset ke 1 hari.")
+        loanDuration = 1
+    }
 
     // Buat objek Loan
     val loan = Loan(bookTitle, borrower, loanDuration)
