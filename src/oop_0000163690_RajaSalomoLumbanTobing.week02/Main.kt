@@ -13,18 +13,23 @@ fun main() {
     print("Masukkan NIM (Wajib 5 Karakter): ")
     val nim = scanner.next()
 
-    scanner.nextLine() // Bersihkan buffer newline (Penyakit klasik Scanner!)
+    scanner.nextLine() // Bersihkan buffer newline
 
-    // Validasi di sisi pemanggil (Main)
+    // Validasi panjang NIM
     if (nim.length != 5) {
         println("ERROR: Pendaftaran dibatalkan. NIM harus 5 karakter!")
-        // Program berhenti di sini untuk mahasiswa ini, tidak membuat objek
     } else {
-        print("Masukkan Jurusan: ")
+        print("Masukkan Jurusan (kosongkan jika belum memilih): ")
         val major = scanner.nextLine()
 
-        // Instansiasi Objek karena data sudah aman
-        val s1 = Student(name, nim, major)
+        // Instansiasi Objek Student
+        val s1 = if (major.isBlank()) {
+            Student(name, nim) // pakai secondary constructor
+        } else {
+            Student(name, nim, major) // pakai primary constructor
+        }
+
         println("Status: Pendaftaran Selesai.")
+        s1.printInfo()
     }
 }
