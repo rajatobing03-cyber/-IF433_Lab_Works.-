@@ -3,6 +3,7 @@ package oop_00000163690_RajaSalomoLumbanTobing_week02
 class Student( new*
     val name: String,
     val nim: String,
+    var gpa: Double = 0.0,
     var major: String
 ) {
     // Body class kosong dulu
