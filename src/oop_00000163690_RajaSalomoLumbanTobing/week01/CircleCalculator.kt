@@ -1,5 +1,6 @@
-package oop_001_johnthor.week01
-fun main(args: Array<String>) {
+package oop_001_RajaSalomoLumbanTobing.week01
+
+fun main(){
 // Variable definition
     var radius: Double = 7.0
     var pi: Double = 3.14
