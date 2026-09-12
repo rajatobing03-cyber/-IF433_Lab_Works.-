@@ -9,3 +9,10 @@ class Employee(val name: String){
             this.salary = value
         }
 }
+var salary: Int = 0
+    set(value) {
+        if (value < 0) {
+            prinln("ERROR: Gaji tidak boleh negatif! Di-set ke 0.")
+            field = 0 // Gunakan field untuk assign nilai asli
+        }
+    }
