@@ -1,80 +1,23 @@
 package oop_001_RajaSalomoLumbanTobing.week01
-S
-fun main(){
-// Variable definition
-    var radius: Double = 7.0
-    var pi: Double = 3.14
-// Calculation
-    var area: Double = pi * radius * radius
 
-    // Output Concatenation
-    println("Radius: " + radius + ", Area: " + area)
 
-    // Logic check
-    checkSize(area)
+fun main() {
+    val title = "Cyberpunk 2077"
+    val price = 600000
+    val userNote: String? = null
+
+    val finalPrice = calculateDiscount(price)
+
+    printReceipt(title = title, finalPrice = finalPrice)
+
+    val noteText = userNote ?: "Tidak ada catatan"
+    println("Catatan: $noteText")
 }
 
-fun checkSize(area: Double) {
-    if (area > 100) {
-        println("This is a Big Circle")
-    } else {
-        println("This is a Small Circle")
+fun calculateDiscount(price: Int) = if (price > 500000) (price * 0.8).toInt() else (price * 0.9).toInt()
 
-        ```kotlin
-        fun main(args: Array<String>) {
-            // Variable definition
-            val radius = 7.0
-            val pi = 3.14
-
-            // Calculation
-            val area = pi * radius * radius
-
-            // Output menggunakan String Template
-            println("Radius: $radius, Area: $area")
-
-            // Logic check
-            checkSize(area)
-        }
-
-        fun checkSize(area: Double) {
-            if (area > 100) {
-                println("This is a Big Circle")
-            } else {
-                println("This is a Small Circle")
-            }
-        }
-        ```
-        fun main(args: Array<String>) {
-            // Variable definition
-            val radius = 7.0
-            val pi = 3.14
-
-            // Calculation
-            val area = pi * radius * radius
-
-            // Output
-            println("Radius: $radius, Area: $area")
-
-            // Logic check
-            println(checkSize(area))
-        }
-
-        fun checkSize(area: Double) = if (area > 100) {
-            "This is a Big Circle"
-        } else {
-            "This is a Small Circle"
-        }
-        fun main() {
-            val radius = 7.0
-            val pi = 3.14
-            val area = pi * radius * radius
-
-            println("Radius: $radius, Area: $area")
-            println(checkSize(area))
-        }
-
-        fun checkSize(area: Double) = if (area > 100) {
-            "This is a Big Circle"
-        } else {
-            "This is a Small Circle"
-        }
+fun printReceipt(title: String, finalPrice: Int) {
+    println("=== STRUK PEMBELIAN STEAMKW ===")
+    println("Judul Game: $title")
+    println("Harga Akhir: Rp $finalPrice")
+}

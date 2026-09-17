@@ -1,27 +1,25 @@
 package oop_00000163690_RajaSalomoLumbanTobing_week01
-
 fun main() {
-    var name: String = "Raja Salomo"
-    var score: int = 80
 
-    println("Nama: " +name + ", Nilai: " + score)
-
-}
-
-fun main() {
-    val name = "Raja Salomo"
+    val name = "John Thor"
     val score = 80
 
-    println("nama: $name, Nilai: $score")
+    println("Nama: $name, Nilai: $score")
+
+    val grade = when (score) {
+        in 90..100 -> "A"
+        in 80..89 -> "B"
+        in 70..79 -> "C"
+        else -> "D"
+    }
+    println("Grade kamu: $grade")
+
+    println("Status: ${calculateStatus(score)}")
+
+    val studentId: String? = null
+    val idLength = studentId?.length ?: 0
+    println("Panjang ID: $idLength")
 }
 
-val grade = when (score){
-    in 90..100 -> "A"
-    in 80 .. 100 -> "B"
-    in 70..79 -> "C"
-    else -> "D"
-}
 
-  println("Grade Kamu: $grade")
-
-fun calculateStatus(score: int) = if (score > 75) "Lulus" else "Tidak lulus"z
+fun calculateStatus(score: Int) = if (score > 75) "Lulus" else "Tidak Lulus"

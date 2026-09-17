@@ -1,6 +1,6 @@
 package oop_00000163690_RajaSalomoLumbanTobing_week02
 
-import java.util.Scanner
+import java.util.*
 
 class Hero(
     val name: String,
@@ -84,3 +84,4 @@ fun main() {
     } else {
         println("Pertarungan berakhir tanpa pemenang.")
     }
+}
