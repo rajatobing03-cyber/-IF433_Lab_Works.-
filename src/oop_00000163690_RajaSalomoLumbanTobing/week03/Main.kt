@@ -12,3 +12,14 @@ fun main() {
     e.increasePerformance()
 
     println("Pajak yang harus dibayar: ${e.tax}")
+
+    val sword = Weapon("Excalibur")
+    sword.damage = -50
+    sword.damage = 9999
+    println("Damage: ${sword.damage}, Tier: ${sword.tier}")
+
+    val player = Player("JohnThor")
+    player.addXp(50)
+    player.addXp(60)
+    println("Level akhir: ${player.level}")
+}
