@@ -1,7 +1,9 @@
 package oop_00000163690_RajaSalomoLumbanTobing.week04
 
+
 open class Vehicle(val brand: String) {
-    var speed : int = 0
+
+    var speed: Int = 0
 
     open fun accelerate() {
         speed += 10
@@ -12,4 +14,3 @@ open class Vehicle(val brand: String) {
         println("Beep, beep!")
     }
 }
-
