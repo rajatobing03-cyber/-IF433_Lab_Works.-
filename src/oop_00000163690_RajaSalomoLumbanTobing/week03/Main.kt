@@ -1,4 +1,4 @@
-package oop_001_RajaSalomoLumbanTobing.week03
+package oop_00000163690_RajaSalomoLumbanTobing.week03
 
 fun main() {
     val e = Employee("Budi")
