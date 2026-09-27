@@ -40,26 +40,44 @@ fun main() {
     val luasLingkaran = mathHelper.hitungLuas(7.0)
     println("Luas lingkaran dengan jari-jari 7 = $luasLingkaran")
 
-    println("=== SISTEM PEMBAYARAN ===")
+    fun main() {
+        println("=== SISTEM PEMBAYARAN ===")
 
-    val eWallet = EWallet(
-        accountName = "Raja",
-        balance = 50000.0
-    )
+        val eWallet = EWallet(
+            accountName = "Raja",
+            balance = 50000.0
+        )
 
-    val creditCard = CreditCard(
-        accountName = "Raja",
-        limit = 100000.0
-    )
+        val creditCard = CreditCard(
+            accountName = "Raja",
+            limit = 100000.0
+        )
 
-    val paymentMethods: List<PaymentMethod> = listOf(
-        eWallet,
-        creditCard
-    )
+        // Polymorphic Collection
+        val paymentMethods: List<PaymentMethod> = listOf(
+            eWallet,
+            creditCard
+        )
 
-    for (paymentMethod in paymentMethods) {
-        println("Akun: ${paymentMethod.accountName}")
-        paymentMethod.processPayment(75000.0)
-        println("-------------------------")
+        // Perulangan pembayaran
+        for (paymentMethod in paymentMethods) {
+
+            println("Akun: ${paymentMethod.accountName}")
+
+            // Pembayaran pertama
+            paymentMethod.processPayment(75000.0)
+
+            // Smart Casting
+            if (paymentMethod is EWallet) {
+                println("Terdeteksi sebagai EWallet")
+
+                paymentMethod.topUp(50000.0)
+
+                println("Mencoba pembayaran kembali...")
+                paymentMethod.processPayment(75000.0)
+            }
+
+            println("-------------------------")
+        }
     }
 }
