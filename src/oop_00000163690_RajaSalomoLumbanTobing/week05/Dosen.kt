@@ -1,11 +1,11 @@
 package oop_00000163690_RajaSalomoLumbanTobing.week05
 
-class Admin(nama: String) : Pegawai(nama) {
+class Dosen(nama: String, val nidn: String) : Pegawai(nama) {
     override fun bekerja() {
-        println("[$nama] sedang duduk di depan komputer melayani administrasi.")
+        println("[$nama] sedang menyiapkan materi perkuliahan dan merivisi RPKPS.")
     }
 
-    fun doAdminWork() {
-        println("[$nama] sedang merekap data absensi mahasiswa.")
+    fun mengajar() {
+        println("[$nama] sedang mengajar mahasiswa di kelas.")
     }
 }
