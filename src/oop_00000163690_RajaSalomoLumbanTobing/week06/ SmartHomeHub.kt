@@ -15,4 +15,19 @@ class SmartHomeHub {
             }
         }
     }
+
+    fun activateSecurityMode() {
+        for (device in devices) {
+
+            // Jika device adalah Recordable, mulai merekam
+            if (device is Recordable) {
+                device.startRecord()
+            }
+
+            // Jika device adalah SmartSpeaker, putar suara peringatan
+            if (device is SmartSpeaker) {
+                device.playMusic("Sirine Peringatan")
+            }
+        }
+    }
 }
