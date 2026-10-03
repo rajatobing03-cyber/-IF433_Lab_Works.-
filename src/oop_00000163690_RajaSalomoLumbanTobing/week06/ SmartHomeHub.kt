@@ -1,33 +1,37 @@
 package oop_00000163690_RajaSalomoLumbanTobing.week06
 
-class SmartHomeHub {
+fun main() {
 
-    val devices = mutableListOf<SmartDevice>()
+    // Membuat SmartHomeHub
+    val hub = SmartHomeHub()
 
-    fun addDevice(device: SmartDevice) {
-        devices.add(device)
-    }
+    // Membuat perangkat
+    val lampu = SmartLamp(
+        "L001",
+        "Ruang Tamu"
+    )
 
-    fun turnOffAllSwitches() {
-        for (device in devices) {
-            if (device is Switchable) {
-                device.turnOff()
-            }
-        }
-    }
+    val speaker = SmartSpeaker(
+        "SP001",
+        "Google Nest Dapur"
+    )
 
-    fun activateSecurityMode() {
-        for (device in devices) {
+    val cctv = SmartCCTV(
+        "CCTV001",
+        "Ezviz Garasi"
+    )
 
-            // Jika device adalah Recordable, mulai merekam
-            if (device is Recordable) {
-                device.startRecord()
-            }
+    // Menambahkan semua perangkat ke Hub
+    hub.addDevice(lampu)
+    hub.addDevice(speaker)
+    hub.addDevice(cctv)
 
-            // Jika device adalah SmartSpeaker, putar suara peringatan
-            if (device is SmartSpeaker) {
-                device.playMusic("Sirine Peringatan")
-            }
-        }
-    }
+    // Mengaktifkan Security Mode
+    println("=== SECURITY MODE ===")
+    hub.activateSecurityMode()
+
+    // Mematikan semua perangkat Switchable
+    println()
+    println("=== TURN OFF ALL SWITCHES ===")
+    hub.turnOffAllSwitches()
 }
