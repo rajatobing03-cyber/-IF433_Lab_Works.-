@@ -20,5 +20,5 @@ fun main() {
         "Transaksi Valid. Harga: Rp$price, Pajak: Rp$tax"
     } ?: "Transaksi Invalid: Harga belum di-set!"
 
-    println(receipt)
+    println(receipt).
 }
