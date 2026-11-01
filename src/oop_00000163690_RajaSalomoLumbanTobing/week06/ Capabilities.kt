@@ -1,7 +1,7 @@
 package oop_00000163690_RajaSalomoLumbanTobing.week06
 
 interface BluetoothConnectable {
-    fun connetToBluetooth()
+    fun connectToBluetooth()
 }
 
 interface Rechargeable {

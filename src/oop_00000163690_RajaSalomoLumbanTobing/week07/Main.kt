@@ -5,8 +5,8 @@ fun main() {
     // TEST SINGLETON
     // ========================================
     println("=== TEST SINGLETON ===")
-    println("Status: ${DatabaseManager.connetionStatus}")
-    DatabaseManager.connet()
+    println("Status: ${DatabaseManager.connectionStatus}")
+    DatabaseManager.connect()
 
     // ========================================
     // TEST COMPANION OBJECT

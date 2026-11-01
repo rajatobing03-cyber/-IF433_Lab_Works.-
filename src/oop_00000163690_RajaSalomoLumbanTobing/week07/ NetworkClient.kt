@@ -7,11 +7,11 @@ class NetworkClient private constructor(val url: String) {
 
         fun createClient() : NetworkClient {
             println("Membangun NetworkClient dengan BASE_URL: $BASE_URL")
-            retrun NetworkClient(BASE_URL)
+            return NetworkClient(BASE_URL)
         }
     }
 
     fun connect() {
-        printl("Connecting to $url...")
+        println("Connecting to $url...")
     }
 }

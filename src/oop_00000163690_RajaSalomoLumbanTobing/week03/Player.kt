@@ -5,6 +5,7 @@ class Player(val username: String) {
 
     val level: Int
         get() = (xp / 100) + 1
+
     fun addXp(amount: Int) {
         if (amount > 0) {
             val oldLevel = level
