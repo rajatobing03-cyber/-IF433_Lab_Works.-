@@ -60,4 +60,4 @@ fun main() {
     topPerformersString.forEach {
         println(it)
     }
-}
+}.
