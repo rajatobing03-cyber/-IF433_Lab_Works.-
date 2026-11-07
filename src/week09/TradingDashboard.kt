@@ -19,4 +19,9 @@ fun main() {
     println("\n=== CLOSED TRADES ===")
     println("Jumlah Closed Trade: ${closedTrades.size}")
     closedTrades.forEach { println(it) }
+
+    val winningTrades = closedTrades.filter { it.roe > 0 }
+
+    println("\n=== WINNING TRADES ===")
+    winningTrades.forEach { println(it) }
 }
