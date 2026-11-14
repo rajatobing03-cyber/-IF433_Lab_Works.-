@@ -31,4 +31,5 @@ fun main() {
     txResponse.data.forEach { tx ->
         println("- ID: ${tx.id}, Jumlah: ${tx.amount}")
     }
+    //full
 }
