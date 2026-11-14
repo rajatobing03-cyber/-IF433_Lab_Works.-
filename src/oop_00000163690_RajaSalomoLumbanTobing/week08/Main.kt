@@ -79,4 +79,5 @@ fun main() {
     println("Status dari Java: $javaRespone (Length: $statusLenght)")
 
     runMockUnitTest()
+
 }
