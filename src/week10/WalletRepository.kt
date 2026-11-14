@@ -1,6 +1,7 @@
 package oop_00000163690_RajaSalomoLumbanTobing.week10
 
-class WalletRepository<T> {
+class WalletRepository<T>
+{
     private val items = mutableListOf<T>()
 
     fun add(item: T) {
